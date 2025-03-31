@@ -1,0 +1,59 @@
+{
+  "../node_modules/@sanity/client/dist/index.browser.js -> ./_chunks-es/stegaEncodeSourceMap.js": {
+    "id": 4195,
+    "files": [
+      "static/chunks/195.0ce658e815a3e8e0.js"
+    ]
+  },
+  "../node_modules/@sanity/client/dist/index.browser.js -> @sanity/eventsource": {
+    "id": 4406,
+    "files": [
+      "static/chunks/406.4cc45b09aefe83fc.js"
+    ]
+  },
+  "../node_modules/@sanity/next-loader/dist/client-components/live-stream.js -> ../_chunks-es/SanityLiveStream.js": {
+    "id": 2258,
+    "files": [
+      "static/chunks/258.fee16a96f2482568.js"
+    ]
+  },
+  "../node_modules/@sanity/next-loader/dist/client-components/live.js -> ../_chunks-es/PresentationComlink.js": {
+    "id": 8049,
+    "files": [
+      "static/chunks/49.9b34bfd38dde449d.js"
+    ]
+  },
+  "../node_modules/@sanity/next-loader/dist/client-components/live.js -> ../_chunks-es/RefreshOnFocus.js": {
+    "id": 6376,
+    "files": [
+      "static/chunks/376.8f09fa22cf2f26a9.js"
+    ]
+  },
+  "../node_modules/@sanity/next-loader/dist/client-components/live.js -> ../_chunks-es/RefreshOnMount.js": {
+    "id": 8513,
+    "files": [
+      "static/chunks/513.1820dde3cb02249a.js"
+    ]
+  },
+  "../node_modules/@sanity/next-loader/dist/client-components/live.js -> ../_chunks-es/RefreshOnReconnect.js": {
+    "id": 2977,
+    "files": [
+      "static/chunks/977.53f7eedd5e2768b8.js"
+    ]
+  },
+  "../node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs -> ./refractor.mjs": {
+    "id": 1826,
+    "files": [
+      "static/chunks/826.5a5b8e481bf4310d.js"
+    ]
+  },
+  "../node_modules/next-sanity/dist/visual-editing/client-component.js -> ../_chunks-es/VisualEditing.js": {
+    "id": 4844,
+    "files": [
+      "static/chunks/c0e7568e.20ea189cdf73e7d0.js",
+      "static/chunks/3204862b.d0b99cfb7e4cabec.js",
+      "static/chunks/262.15034ddcac429cdc.js",
+      "static/chunks/73.fa6e18e4b9f45e77.js"
+    ]
+  }
+}

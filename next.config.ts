@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+const nextConfig = {
+  images: {
+    domains: ['cdn.sanity.io'],
+    unoptimized: true, // 🔥 IMPORTANTE para funcionar no Firebase
+  },
+  output: 'export', // 🔥 Indica que vamos exportar como HTML estático
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default nextConfig
