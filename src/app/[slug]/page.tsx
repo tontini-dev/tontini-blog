@@ -33,7 +33,6 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 export async function generateStaticParams() {
   const query = `*[_type == "post"]{ "slug": slug.current }`
   const slugs = await sanityClient.fetch<{ slug: string }[]>(query)
-
   return slugs.map(({ slug }) => ({ slug }))
 }
 
@@ -45,8 +44,8 @@ type Props = {
 }
 
 // ✅ Página individual do post
-export default async function PostPage({ params }) {
-  const { slug } = await params
+export default async function PostPage({ params }: Props) {
+  const { slug } = params
 
   const post = await sanityClient.fetch(query, { slug })
 

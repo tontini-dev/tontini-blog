@@ -50,27 +50,25 @@ export default async function BlogHome() {
                 />
               )}
               <div className="p-5 flex flex-col justify-between h-full">
-              {Array.isArray(post.categories) && post.categories.length > 0 && (
-                <div className="mb-2 flex flex-wrap gap-2">
+                {Array.isArray(post.categories) && post.categories.length > 0 && (
+                  <div className="mb-2 flex flex-wrap gap-2">
                     {post.categories.map((cat) => (
-                    <span
+                      <span
                         key={cat._id}
                         className="text-xs bg-[#14A5D6]/10 text-[#14A5D6] px-2 py-1 rounded-full font-medium"
-                    >
+                      >
                         {cat.title}
-                    </span>
+                      </span>
                     ))}
-                </div>
+                  </div>
                 )}
                 <h2 className="text-xl font-semibold text-[#14A5D6] mb-2 group-hover:underline">
                   {post.title}
                 </h2>
                 <p className="text-sm text-gray-500 mb-3">
-                  {new Date(post.publishedAt).toLocaleDateString()}
+                  {new Date(post.publishedAt).toLocaleDateString('es-ES')}
                 </p>
-                <p className="text-gray-700 text-sm line-clamp-3">
-                  {post.excerpt}
-                </p>
+                <p className="text-gray-700 text-sm line-clamp-3">{post.excerpt}</p>
               </div>
             </Link>
           ))}
