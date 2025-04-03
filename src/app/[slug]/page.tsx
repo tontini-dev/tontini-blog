@@ -32,19 +32,20 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 export async function generateStaticParams() {
   const query = `*[_type == "post"]{ "slug": slug.current }`
   const slugs = await sanityClient.fetch<{ slug: string }[]>(query)
+
   return slugs.map(({ slug }) => ({ slug }))
 }
 
-// ✅ Tipagem correta
-type Props = {
+// ✅ Tipagem correta para a página com rota dinâmica
+type PageProps = {
   params: {
     slug: string
   }
 }
 
 // ✅ Página individual do post
-export default async function PostPage({ params }: Props) {
-  const { slug } = params // ❌ você estava usando `await params`, que não é necessário
+export default async function PostPage({ params }: PageProps) {
+  const { slug } = params
 
   const post = await sanityClient.fetch(query, { slug })
 
