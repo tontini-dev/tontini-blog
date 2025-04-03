@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { sanityClient } from '@/lib/sanity'
 import { groq } from 'next-sanity'
 import Header from '@/components/Header'
@@ -45,7 +44,7 @@ type Props = {
 
 // ✅ Página individual do post
 export default async function PostPage({ params }: Props) {
-  const { slug } = params
+  const { slug } = params // ❌ você estava usando `await params`, que não é necessário
 
   const post = await sanityClient.fetch(query, { slug })
 
