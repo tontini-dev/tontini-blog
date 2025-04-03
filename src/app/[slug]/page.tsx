@@ -8,7 +8,7 @@ import PortableTextRenderer from '@/components/PortableTextRenderer'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-// 🔍 Consulta Sanity para a página
+// Consulta Sanity
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   _id,
   title,
@@ -28,25 +28,20 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`
 
-// ✅ Geração estática (SSG)
+// Geração estática
 export async function generateStaticParams() {
   const query = `*[_type == "post"]{ "slug": slug.current }`
   const slugs = await sanityClient.fetch<{ slug: string }[]>(query)
-
   return slugs.map(({ slug }) => ({ slug }))
 }
 
-// ✅ Tipagem correta para a página com rota dinâmica
-type PageProps = {
-  params: {
-    slug: string
-  }
-}
-
-// ✅ Página individual do post
-export default async function PostPage({ params }: PageProps) {
+// Página individual
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const { slug } = params
-
   const post = await sanityClient.fetch(query, { slug })
 
   if (!post) return notFound()
@@ -54,7 +49,6 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <>
       <Header />
-
       <main className="max-w-3xl mx-auto px-6 py-10 bg-white rounded-lg shadow-md">
         <article>
           <Link
@@ -103,7 +97,6 @@ export default async function PostPage({ params }: PageProps) {
           </div>
         </article>
       </main>
-
       <Footer />
     </>
   )
